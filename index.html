@@ -1,0 +1,94 @@
+<!--3-->
+<!---->
+<!DOCTYPE html>
+<html>
+ <head>
+	<script src="https://kit.fontawesome.com/781c819e54.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ephesis&display=swap" rel="stylesheet">
+<link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+ </head>
+
+<style>
+.center {
+    width: 100px;
+    height: 100px;
+    
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    margin: auto;
+    font-family: 'Ephesis', cursive;
+}
+</style>
+
+ <body>
+
+	<div class="center">
+    	<p id="battery"></p>
+		<h1>Working week at </h1><h1 id="percentage" class="animate__animated animate__zoomIn"></h1>
+    </div>
+	
+
+	<script>
+    
+    	var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+        
+        var now = new Date();
+        var day = days[ now.getDay() ];
+        
+        var today = new Date()
+		var curHr = today.getHours()
+
+        let percentage = "100%";
+        let battery = "";
+        
+        console.log(day)
+        if(day === 'Monday'){
+        	battery = '<i class="fas fa-battery-full fa-10x"></i>';
+        	if(curHr > 13){
+            	percentage = "90%";
+            }
+        }else if(day===('Tuesday')){
+        battery = '<i class="fas fa-battery-three-quarters fa-10x"></i>';
+         percentage = "80%";
+         if(curHr > 13){
+            	percentage = "70%";
+         }
+        }else if(day===('Wednesday')){
+        battery = '<i class="fas fa-battery-half fa-10x"></i>';
+        percentage = "60%";
+         if(curHr > 13){
+            	percentage = "50%";
+         }
+        }else if(day===('Thursday')){
+        battery = '<i class="fas fa-battery-quarter fa-10x"></i>';
+        percentage = "40%";
+         if(curHr > 13){
+            	percentage = "30%";
+         }
+        }else if(day===('Friday')){
+        battery = '<i class="fas fa-battery-empty fa-10x"></i>';
+        percentage = "20%";
+         if(curHr > 13){
+            	percentage = "10%";
+         }
+        }
+    
+		document.getElementById("battery").innerHTML = battery;
+        document.getElementById("percentage").innerHTML = percentage;
+	</script>
+
+	<noscript>Sorry, your browser does not support JavaScript!</noscript>
+
+
+ </body>
+</html>
+
