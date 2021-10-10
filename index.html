@@ -45,12 +45,13 @@
         var today = new Date()
 		var curHr = today.getHours()
 
-        let percentage = "100%";
-        let battery = "";
+        let percentage = "0%";
+        let battery = "<i class="fas fa-battery-empty fa-10x"></i>";
         
         console.log(day)
         if(day === 'Monday'){
         	battery = '<i class="fas fa-battery-full fa-10x"></i>';
+		percentage = "100%";
         	if(curHr > 13){
             	percentage = "90%";
             }
